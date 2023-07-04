@@ -1,0 +1,39 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --all-features
+Features: test-name=rust-minimal-lexical:@
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --no-default-features --features alloc
+Features: test-name=librust-minimal-lexical-dev:alloc
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --no-default-features --features compact
+Features: test-name=librust-minimal-lexical-dev:compact
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets 
+Features: test-name=librust-minimal-lexical-dev:default
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --no-default-features --features lint
+Features: test-name=librust-minimal-lexical-dev:lint
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --no-default-features --features nightly
+Features: test-name=librust-minimal-lexical-dev:nightly
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --no-default-features --features std
+Features: test-name=librust-minimal-lexical-dev:std
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test minimal-lexical 0.2.1 --all-targets --no-default-features
+Features: test-name=librust-minimal-lexical-dev:
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
